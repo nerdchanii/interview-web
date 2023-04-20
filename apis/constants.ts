@@ -1,6 +1,10 @@
 const VERSION = "v1";
-const BASE_URL = "http://localhost:3000/api";
-export const API_URL = `${BASE_URL}/${VERSION}`;
+const VERSION = "v1";
+const BASE_URL = `/api/${VERSION}`
+// when add process env, change host to env;
+const HOST = "https://localhost:3000";
+export const API_URL = `${HOST}${BASE_URL}`
+
 export const DEFAULT_TIMEOUT = 10000;
 export const API_URI = Object.freeze({
   USER: "/user",
