@@ -21,13 +21,9 @@ export default class AuthApis extends Apis {
     this.authManager = new AuthManager(caller);
   }
 
-  login({ id, password }: LoginFormData) {
+  login(loginFormData: LoginFormData) {
     return this.caller.post<{ token: string }, LoginFormData>(
-      this.uri("/login"),
-      {
-        id,
-        password,
-      }
+      this.uri("/login"), loginFormData
     );
   }
 
