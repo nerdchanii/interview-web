@@ -7,7 +7,7 @@ export const API_URL = `${HOST}${BASE_URL}`
 
 export const DEFAULT_TIMEOUT = 10000;
 export const API_URI = Object.freeze({
-  USER: "/user",
+  USERS: "/users"
   AUTH: "/auth",
 });
 
