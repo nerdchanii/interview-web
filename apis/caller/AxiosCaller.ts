@@ -20,7 +20,8 @@ export class AxiosCaller implements ICaller<AxiosRequestConfig> {
       const authRequired = AUTH_NEEDED_URI.some((pattern) => {
         return config.url?.match(pattern);
       });
-      if (!token && authRequired) throw new Error("Unauthorized");
+// TODO: Replace with custom error object when created
+ if (!token && authRequired) throw new Error("Unauthorized");
       if (!authRequired) return config;
       const newConfig = {
         ...config,
