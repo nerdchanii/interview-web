@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import SEO from '@/components/seo'
+import SEO from '@/components/common/SEO'
 
 const inter = Inter({ subsets: ['latin'] })
 

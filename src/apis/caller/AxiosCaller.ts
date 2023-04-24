@@ -4,7 +4,7 @@ import axios, {
   AxiosRequestHeaders,
   InternalAxiosRequestConfig,
 } from "axios";
-import { AUTH_NEEDED_URI, API_URL, DEFAULT_TIMEOUT } from "../constants";
+import { AUTH_NEEDED_URI, API_URL, DEFAULT_TIMEOUT } from "@/apis/constants";
 import { ICaller } from "./types";
 
 export class AxiosCaller implements ICaller<AxiosRequestConfig> {
@@ -20,8 +20,8 @@ export class AxiosCaller implements ICaller<AxiosRequestConfig> {
       const authRequired = AUTH_NEEDED_URI.some((pattern) => {
         return config.url?.match(pattern);
       });
-// TODO: Replace with custom error object when created
- if (!token && authRequired) throw new Error("Unauthorized");
+      // TODO: Replace with custom error object when created
+      if (!token && authRequired) throw new Error("Unauthorized");
       if (!authRequired) return config;
       const newConfig = {
         ...config,

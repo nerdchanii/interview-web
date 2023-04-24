@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from "axios";
-import { Apis } from "../abtract";
-import { AxiosCaller, ICaller } from "../caller";
-import { API_URI } from "../constants";
+import { Apis } from "@/apis/abtract";
+import { ICaller } from "@/apis/caller";
+import { API_URI } from "@/apis/constants";
 import AuthManager from "./AuthManager";
 
 type LoginFormData = {
@@ -23,7 +23,8 @@ export default class AuthApis extends Apis {
 
   login(loginFormData: LoginFormData) {
     return this.caller.post<{ token: string }, LoginFormData>(
-      this.uri("/login"), loginFormData
+      this.uri("/login"),
+      loginFormData
     );
   }
 
