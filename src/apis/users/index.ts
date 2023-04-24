@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from "axios";
-import { ICaller } from "@/src/apis/caller/types";
-import { API_URI } from "@/src/apis/constants";
-import { Apis } from "@/src/apis/abtract";
+import { ICaller } from "@/apis/caller";
+import { API_URI } from "@/apis/constants";
+import { Apis } from "@/apis/abtract";
 
 export default class UserApis extends Apis {
   constructor(caller: ICaller<AxiosRequestConfig>) {
