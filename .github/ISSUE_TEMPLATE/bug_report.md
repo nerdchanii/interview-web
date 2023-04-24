@@ -1,10 +1,9 @@
 ---
 name: Bug report
 about: Bug를 보고해주세요!
-title: "[BUG]"
+title: '[BUG]'
 labels: bug
 assignees: ''
-
 ---
 
 ### 설명

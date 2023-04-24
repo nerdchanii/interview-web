@@ -1,5 +1,5 @@
-import { AxiosRequestConfig } from "axios";
-import { AxiosCaller, ICaller } from "@/apis/caller";
+import { AxiosRequestConfig } from 'axios';
+import { AxiosCaller, ICaller } from '@/apis/caller';
 
 export default class AuthManager {
   caller: ICaller<AxiosRequestConfig>;

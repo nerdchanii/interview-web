@@ -1,5 +1,5 @@
-import { AxiosRequestConfig } from "axios";
-import { ICaller } from "./caller";
+import { AxiosRequestConfig } from 'axios';
+import { ICaller } from './caller';
 
 export abstract class Apis {
   caller: ICaller<AxiosRequestConfig>;

@@ -9,6 +9,18 @@
     "lint": "next lint",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**.*": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@types/node": "18.14.1",
     "@types/react": "18.0.28",
@@ -24,6 +36,9 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4"
+    "@commitlint/config-conventional": "^17.4.4",
+    "eslint-config-prettier": "^8.8.0",
+    "lint-staged": "^13.2.1",
+    "prettier": "2.8.8"
   }
 }
