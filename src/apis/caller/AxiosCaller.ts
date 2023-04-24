@@ -3,9 +3,9 @@ import axios, {
   AxiosRequestConfig,
   AxiosRequestHeaders,
   InternalAxiosRequestConfig,
-} from "axios";
-import { AUTH_NEEDED_URI, API_URL, DEFAULT_TIMEOUT } from "@/apis/constants";
-import { ICaller } from "./types";
+} from 'axios';
+import { AUTH_NEEDED_URI, API_URL, DEFAULT_TIMEOUT } from '@/apis/constants';
+import { ICaller } from './types';
 
 export class AxiosCaller implements ICaller<AxiosRequestConfig> {
   axios: AxiosInstance;
@@ -16,12 +16,12 @@ export class AxiosCaller implements ICaller<AxiosRequestConfig> {
     });
 
     this.axios.interceptors.request.use((config) => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem('token');
       const authRequired = AUTH_NEEDED_URI.some((pattern) => {
         return config.url?.match(pattern);
       });
       // TODO: Replace with custom error object when created
-      if (!token && authRequired) throw new Error("Unauthorized");
+      if (!token && authRequired) throw new Error('Unauthorized');
       if (!authRequired) return config;
       const newConfig = {
         ...config,
@@ -41,7 +41,7 @@ export class AxiosCaller implements ICaller<AxiosRequestConfig> {
   async post<T, D>(
     url: string,
     data: D,
-    option: AxiosRequestConfig<any>
+    option: AxiosRequestConfig<any>,
   ): Promise<T> {
     const response = await this.axios.post(url, data, option);
     return response.data;
@@ -49,7 +49,7 @@ export class AxiosCaller implements ICaller<AxiosRequestConfig> {
   async put<T, D>(
     url: string,
     data: D,
-    option: AxiosRequestConfig<any>
+    option: AxiosRequestConfig<any>,
   ): Promise<T> {
     const response = await this.axios.put(url, data, option);
     return response.data;

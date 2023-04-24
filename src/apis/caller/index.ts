@@ -1,2 +1,2 @@
-export { AxiosCaller } from "./AxiosCaller";
-export * from "./types";
+export { AxiosCaller } from './AxiosCaller';
+export * from './types';
