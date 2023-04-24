@@ -1,8 +1,8 @@
-import { AxiosRequestConfig } from "axios";
-import { Apis } from "@/apis/abtract";
-import { ICaller } from "@/apis/caller";
-import { API_URI } from "@/apis/constants";
-import AuthManager from "./AuthManager";
+import { AxiosRequestConfig } from 'axios';
+import { Apis } from '@/apis/abtract';
+import { ICaller } from '@/apis/caller';
+import { API_URI } from '@/apis/constants';
+import AuthManager from './AuthManager';
 
 type LoginFormData = {
   id: string;
@@ -23,13 +23,13 @@ export default class AuthApis extends Apis {
 
   login(loginFormData: LoginFormData) {
     return this.caller.post<{ token: string }, LoginFormData>(
-      this.uri("/login"),
-      loginFormData
+      this.uri('/login'),
+      loginFormData,
     );
   }
 
   signup(form: SignUpFormData) {
-    return this.caller.post(this.uri("/signup"), {}, {});
+    return this.caller.post(this.uri('/signup'), {}, {});
   }
 
   logout() {
